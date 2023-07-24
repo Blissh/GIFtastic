@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 
 export const GIFtastic = () => {
-  const [categories, setCategories] = useState(['Valorant']);
+  const [categories, setCategories] = useState(["Valorant"]);
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory)) return;
     setCategories([...categories, newCategory]);

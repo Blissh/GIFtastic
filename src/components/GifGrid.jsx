@@ -1,31 +1,19 @@
 import PropTypes from "prop-types";
-import { getGifs } from "../helpers/getGifs";
-import { useEffect, useState } from "react";
+import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
-
-  const getImages = async () => {
-    const imgs = await getGifs(category);
-    console.log(imgs);
-    setImages(imgs);
-  };
-
-  useEffect(() => {
-    getImages();
-  }, []);
+  const { images, isLoading } = useFetchGifs(category);
 
   return (
     <>
       <h3>{category}</h3>
-      <ol>
-        {images.map(({ id, title, url }) => (
-          <>
-            <img src={url} alt={title} />
-            <li key={id}>{title}</li>
-          </>
+      {isLoading && <h2>Loading...</h2>}
+      <div className="card-grid">
+        {images.map((image) => (
+          <GifItem key={image.id} {...image} />
         ))}
-      </ol>
+      </div>
     </>
   );
 };
