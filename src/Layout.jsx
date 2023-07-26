@@ -3,7 +3,7 @@ import { GIFtastic, HeaderUI} from './components';
 import { Separator } from "./components/Separator";
 
 export const Layout = () => {
-  const [categories, setCategories] = useState(['Valorant']);
+  const [categories, setCategories] = useState([]);
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
