@@ -16,17 +16,18 @@ export const AddCategory = ({ onNewCategory }) => {
   };
 
   return (
-    <form action="" onSubmit={onSubmit}>
+    <form action="" onSubmit={onSubmit} className="h-max w-7/12 min-w-max">
       <input
         type="text"
         value={inputValue}
-        placeholder="Busca tu gif"
+        placeholder="Search your topic :)"
         onChange={onInputChange}
+        className="mt-8 h-12 w-full rounded-lg border border-white bg-slate-800 px-4 text-white caret-orange-600 shadow-lg shadow-slate-500/40 outline-orange-500 hover:shadow-orange-600/60"
       />
     </form>
   );
 };
 
 AddCategory.propTypes = {
-    onNewCategory: PropTypes.func,
+  onNewCategory: PropTypes.func,
 };
