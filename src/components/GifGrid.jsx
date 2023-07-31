@@ -7,10 +7,11 @@ export const GifGrid = ({ category }) => {
 
   return (
     <>
-
-      {isLoading && <h2>Loading...</h2>} 
-      <h2 className="text-xl text-gray-300 font-bold ml-10 my-10">Your search: {category}</h2>
-      <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 grid-flow-dense px-10">
+      {isLoading && <h2>Loading...</h2>}
+      <h2 className="my-10 ml-10 text-xl font-bold text-gray-300 md:ml-20 xl:ml-28">
+        Your search: {category}
+      </h2>
+      <section className="grid grid-flow-dense grid-cols-2 gap-6 px-8 md:grid-cols-3 md:px-20 lg:grid-cols-4 xl:grid-cols-6 xl:px-28">
         {images.map((image) => (
           <GifItem key={image.id} {...image} />
         ))}

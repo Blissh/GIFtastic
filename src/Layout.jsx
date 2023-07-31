@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GIFtastic, HeaderUI} from './components';
+import { GIFtastic, HeaderUI } from "./components";
 import { Separator } from "./components/Separator";
 
 export const Layout = () => {
@@ -8,10 +8,10 @@ export const Layout = () => {
     if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
   };
-  
+
   return (
-    <div className="bg-gradient-to-br from-black to-slate-800 h-full min-h-screen">
-      <HeaderUI onAddCategory={onAddCategory}/>
+    <div className="h-full min-h-screen bg-gradient-to-br from-black to-slate-800">
+      <HeaderUI onAddCategory={onAddCategory} />
       <Separator />
       <GIFtastic categories={categories} />
     </div>
